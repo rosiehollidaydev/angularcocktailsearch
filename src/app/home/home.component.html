@@ -1,0 +1,36 @@
+ <mat-toolbar color="primary">  
+    <div class="search"><input id="search" class="search" type="text"><input type="button" (click)="searchData()" value="Search"></div>
+    </mat-toolbar>
+    <div>  
+        <div class="noResults" *ngIf="cocktails === null">
+            <mat-card style="margin-top:10px;">
+                   <h1> No Results</h1>
+                   <button (click)="get()" mat-raised-button color="primary">Reset</button>
+            </mat-card>
+        </div> 
+     <div class="loading">
+        <mat-spinner *ngIf="cocktails !== null && cocktails.length === 0"></mat-spinner>
+    </div>   
+    <div class="content" fxLayout="row wrap" fxLayoutGap="10px grid">
+   
+   
+    <div fxFlex="25%" fxLayoutAlign=" stretch" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let cocktail of cocktails">
+    <mat-card  style="margin-top:10px;">
+        <mat-card-header>
+            <mat-card-title>{{cocktail.strDrink}}</mat-card-title>
+            <!-- <mat-card-subtitle>{{cocktail.strAlcoholic}}
+            </mat-card-subtitle> -->
+        </mat-card-header>
+        <mat-card-content>
+        <!--     <p>
+                {{cocktail.strInstructions}}
+            </p> -->
+            <img style="height:100%; width: 100%;" src="{{ cocktail.strDrinkThumb }}" />
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>LIKE</button> <button mat-button>SHARE</button>
+          </mat-card-actions>
+    </mat-card>
+</div>
+</div>
+</div>
