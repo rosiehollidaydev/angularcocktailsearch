@@ -1,6 +1,6 @@
 # Cocktailsearch
 
-[Play with it](https://rosie-cocktail-search.netlify.app/home) 
+[Play with it](https://rosie-cocktail-search.netlify.app) 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
